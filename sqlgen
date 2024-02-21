@@ -1,0 +1,22 @@
+#!/usr/bin/env php
+<?php
+
+// see: https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/blob/87944756eea4900084d386d63acd6070ff59394b/php-cs-fixer#L59
+// load dependencies
+(function () {
+    $possibleFiles = [
+        __DIR__.'/../../autoload.php',
+        __DIR__.'/../autoload.php',
+        __DIR__.'/vendor/autoload.php',
+    ];
+
+    foreach ($possibleFiles as $autoloadFile) {
+        if (file_exists($autoloadFile)) {
+            require_once $autoloadFile;
+
+            return;
+        }
+    }
+
+    trigger_error('Could not found autoload.php', \E_USER_WARNING);
+})();

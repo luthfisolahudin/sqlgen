@@ -1,0 +1,58 @@
+{
+  "name": "luthfisolahudin/sqlgen",
+  "description": "Generate deploy-safe SQL query",
+  "license": "MIT",
+  "type": "application",
+  "authors": [
+    {
+      "name": "Luthfi Solahudin",
+      "email": "luthfisolahudin@outlook.com"
+    }
+  ],
+  "require": {
+    "php": "^7.4 || ^8",
+    "ext-json": "*"
+  },
+  "require-dev": {
+    "bamarni/composer-bin-plugin": "^1.8",
+    "kint-php/kint": "^5.1",
+    "kint-php/kint-helpers": "^5.0"
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true,
+  "autoload": {
+    "psr-4": {
+      "LuthfiSolahudin\\Sqlgen\\": "./src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "LuthfiSolahudin\\Sqlgen\\Test\\": "./tests"
+    }
+  },
+  "bin": [
+    "sqlgen"
+  ],
+  "config": {
+    "allow-plugins": {
+      "bamarni/composer-bin-plugin": true
+    },
+    "optimize-autoloader": true,
+    "platform-check": true,
+    "preferred-install": "dist",
+    "sort-packages": true
+  },
+  "extra": {
+    "bamarni-bin": {
+      "bin-links": false,
+      "forward-command": false,
+      "target-directory": "vendor-bin"
+    },
+    "branch-alias": {
+      "dev-main": "1.x-dev"
+    }
+  },
+  "scripts": {
+    "cs": "@php vendor-bin/php-cs-fixer/vendor/bin/php-cs-fixer"
+  }
+}
